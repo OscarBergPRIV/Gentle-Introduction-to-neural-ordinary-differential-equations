@@ -1,5 +1,5 @@
 # Background
-
+## ResNet
 ![Basic Resnet](imgs/basicresnet.JPG)
 
 Resnet: $x_{t+1} = x_t + f(x_t)$
@@ -7,8 +7,11 @@ Resnet: $x_{t+1} = x_t + f(x_t)$
 When learning the transition from one input to the direct next output, it is simpler to focus on the difference between the two. This approach ensures that the gradient 
 $\frac{dx_{t+1}}{dx_t} = 1 + \frac{df}{dx_t}$ which effectively prevents issues related to vanishing or exploding gradients.
 
+## From discrete to continuous domain
+$t$ in the above equations represent the layer index. For example $x_{t+1}$ may be the first ResNet-Layer and $x_{t+2}$ may be the second ResNet-Layer within a bigger network.
+
 Let's consider the layer index $t$ as continuous time.
-For now, let's focus on the abstract mathematics. The intuition will follow later.
+For now, accept the abstract mathematics. The intuition will follow later.
 
 $x_{t+1} - x_t = f(x_t)$
 
@@ -17,9 +20,9 @@ $\frac{x_{t+1} - x_t}{t+1 - t} = f(x_t)$ ***denominator is $t+1-t = 1$, thus no 
 By imagining that $t$ represents discrete time steps instead of layer indices,
 we can reduce the "time step" between two consecutive steps ($t$ and $t+1$) resulting in:
 
-$dx(t)/t = f(x)$
+$\frac{dx(t)}{t} = f(x)$
 
-This is a simple ordinary differential equation. 
+This is a simple ordinary differential equation. We now went from an understandable discrete hidden-layer Network to a description of a dynamic system.
 
 Differences, now the function f can be a learnable paramterized neural layer or a combination of layers, as long as 
 the input shape matches the output shape, since the output of one time step will be the input of the next time step.
