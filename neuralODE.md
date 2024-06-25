@@ -164,7 +164,11 @@ in which the two desired trajectories can cross. Note: The mathematical proof of
 To tackle this issue, Dupont et al. introduced augmented neural ODE. The main idea here is to insert additional dimensions to the input, such that
 the network can find a vector space, in which the desired trajectories are not forced to merge.
 
-For exmaple, a 3D-vector space can be learned such that the mapping is achieved without the two trajectories crossing.
+For example, a 2D-vector space can be learned such that the mapping is achieved without the two trajectories crossing.
+
+Another example if the following problem:
+
+![]()
 
 ### Why is a simple ResNet able to compute this mapping?
 
