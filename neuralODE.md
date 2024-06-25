@@ -1,7 +1,7 @@
 # Background
 
 Resnet:
-![Basic Resnet]()
+![Basic Resnet](imgs/basicresnet.JPG)
 $x_{t+1} = x_t + f(x_t)$
 
 Easier to learn only the difference of the input to the direct next output (gradient dx_t+1/dx_t = 1 + df/dx_t)
