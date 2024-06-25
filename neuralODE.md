@@ -204,10 +204,12 @@ Imagine $z(t)$ is a constant since we want to develop our series with the indepe
 Since we need the function value for $\epsilon=0$, we can easily see that $T_{\epsilon=0} = z(t)$.
 Moreover, by derivating the integral, we obtain the gradient we need for the Taylor expression, which is only the function $f(z(t),t;\theta)$
 
-Now, how can we obtain the desired gradients $\frac{dL}{d\theta}$?
+How can we obtain the desired gradients $\frac{dL}{d\theta}$?
 
 Take a look here:
 
 ![Proof ASM2](imgs/proof_ASM2.JPG)
 
-By generalizing this derivation to a 3-dimensional variable problem, we can obtain our dersired gradients, we need for the [Backward-Pass](https://github.com/OscarBergPRIV/Gentle-Introduction-to-neural-ordinary-differential-equations/blob/main/neuralODE.md#adjoint-sensitivity-method)
+By generalizing this derivation to a 3-dimensional variable problem, we can obtain our desired gradients, which we need for the [Backward-Pass](https://github.com/OscarBergPRIV/Gentle-Introduction-to-neural-ordinary-differential-equations/blob/main/neuralODE.md#adjoint-sensitivity-method).
+
+Here, it is crucial to understand, that in this formulation not only $z(t)$ is time-dependent, but also $\theta(t)$ and $t(t)$. Since, our parameters $\theta$ and the time $t(t)$ have trivial changes in time (namely 0 and 1), we can obtain our final gradient.
