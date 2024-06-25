@@ -181,9 +181,11 @@ Take a look at the 3D vector space for the latter problem to achieve the desired
 
 ### Why is a simple ResNet able to compute this mapping?
 
-A ResNet does not learn the underlying dynamis of the transfomration system, it learns every discrete step one by one.
-Hence, the ResNet is able to insert some form of dersired error in the right step of the trajectories, such that the two trajectories are able
-to cross in the transformation space.
+Despite the power of NODE, ResNet can easily outperform the former for the above mapping problems.
+
+A ResNet does not learn the underlying dynamics of the transformative system, it learns every discrete step one by one.
+Hence, the ResNet is able to insert some form of desried error in the right step of the trajectories, such that the two trajectories are able
+to cross in the transformation space. The "vector field" of a simple ResNet can be "distorted" such that the vectors can cross at the right depth of the network.
 
 
 
