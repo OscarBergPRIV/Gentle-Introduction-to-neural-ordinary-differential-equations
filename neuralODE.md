@@ -85,9 +85,11 @@ The above figure from the original paper highlights the difference in data trans
 NODE (right) try to learn the underlying vector field itself. Hence, intermediate data can be spread in a non-uniform manner along the depth-axis, which represents the continuous time. 
 
 ## Backward-Pass
-Since, the output in our case the output of the model y_T (here T is the last time step of our trajectory)
-and the corresponding label determines the Loss of our model. For exmaple we can use MSELoss,
-loss = MSELoss(y_T)
+Since, the mismatch of the output, in our case the output of the model $x_T$, and the corresponding label $y$ determines the Error of our model, we can compute the total Loss.
+
+For exmaple, we can use a standard mean-squared error:
+
+$loss = MSELoss(x_T, y)$
 
 y_T is defined by going along the trajoctroy or in our case integrating the derivaive dx(t)/t along the time steps, i.e.,
 
