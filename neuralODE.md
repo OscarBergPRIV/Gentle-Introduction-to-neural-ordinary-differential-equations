@@ -132,28 +132,28 @@ the corresponding $a(T) = \frac{dL}{x_T}$, which we have given after the forward
 So, by starting drawing our trajectory at time step T and computing the derivatives for a(t) and x(t) (since we have the diff.eq. at hand)
 we can compute our final derivative $\frac{dL}{d\theta}$ and utilize the latter to update the internal parameters $\theta$.
 
-Advantages:
+## Advantages
 
-The memory cost of our neural ODe is constant, i.e., O(1), since we do not need to store our intermediate activation for the backward pass.
-The backward pass is able to reconstruct the trajectorty itself.
+The memory cost of our NODE is constant, i.e., $O(1)$, since we do not need to store our intermediate activation for the backward pass.
+The backward pass is able to reconstruct the trajectory itself.
 
-Euler`s method is only one type of ODe Solvers, more modern solvers are able to solve ODEs more efficient and accurate and has the ability
+Euler`s method is only one type of ODE Solvers, more modern solvers are able to solve ODEs more efficiently and accurately and have the ability
 for the user to guarantee maximum growth of the approximation error.
-Based on the precision of the ODeSolver (which may be defined by the user based on the available resources), the cost evaluating the odemodel
-is proportional to the intial complexity.
-from paper:
-"After training, accuracy can be reduced for real-time or low-power applications."
 
+Based on the precision of the ODESolver (which may be defined by the user based on the available resources), the cost of evaluating the NODE model
+is proportional to the initial complexity.
+Quote from [Chen et al.](https://arxiv.org/abs/1806.07366):
+_"After training, accuracy can be reduced for real-time or low-power applications."_
 
 # Augmented neural ODE
 
-First, we take a look at a simple mapping problem, which we want to solve with and neural ODE.
-Imagine our input are in scalar value, consisting of either -1 or 1.
+First, we take a look at a simple mapping problem, which we want to solve with an NODE:
+Imagine our input consists of one-dimensional scalar values, consisting of either -1 or 1.
 This input value should now be mapped to the corresponding labels (1 (for input=-1) and -1 (for input=1))
 
-We can visualize this problem with following figure:
+We can visualize this problem with the following figure from [this paper](https://arxiv.org/abs/1904.01681):
 
-#insert image#
+![NODE mapping problem]()
 
 Imagine the input points (two points at the left-hand side) should be transformed along a defines vector space in time to the output points
 (right-hand side)
