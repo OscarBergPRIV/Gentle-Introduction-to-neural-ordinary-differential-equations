@@ -29,7 +29,7 @@ How can we interpret this system now? What is the input, intermediate and final 
 # Neural Ordinary differential equation (NODE)
 
 The general function $f$ in the above equation can be now represented by a parameterized neural network.
-For instance, a simple fully-connected layer or a 2D conoluational layer with subsequent non-linear activation function can be used.
+For instance, a simple fully-connected layer or a 2D convoluational layer with subsequent non-linear activation function can be used.
 
 Note: In the end, we want to train the internal weights and biases analog to a conventional neural network.
 
@@ -37,6 +37,7 @@ The NODE can be expressed as follows:
 
 $\frac{dx(t)}{t} = f(x(t),t;\theta)$
 
+Here, $\theta$ represents the internal parameter i.e., weights and biases.
 
 Differences, now the function f can be a learnable paramterized neural layer or a combination of layers, as long as 
 the input shape matches the output shape, since the output of one time step will be the input of the next time step.
