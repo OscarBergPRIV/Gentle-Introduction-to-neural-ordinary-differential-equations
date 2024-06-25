@@ -197,9 +197,9 @@ Note: The images are directly copied from [Chen et al.](https://arxiv.org/pdf/18
 In my opinion, the most difficult step to understand is step from (40) to (41).
 Here, a Taylor series of first order is constructed around $z(t)$. 
 
-[Reminder](https://en.wikipedia.org/wiki/Taylor_series) for a first-order Taylor series for a function $f(t)$ around $a$:
+[Reminder](https://en.wikipedia.org/wiki/Taylor_series#Definition) for a first-order Taylor series for a function $f(t)$ around $a$:
 $f_{Taylor} = f(a) + (t-a) \cdot \frac{df}{dt}(a)$
 
 Imagine $z(t)$ is a constant since we want to develop our series with the independent variable $\epsilon$.
-Since we need the function value for $\epsilon=0$, we can easily see that the function value of $T_{\epsion=0} = z(t)$.
-Moreover, derivating the integral, we obtain the gradient we need for the 
+Since we need the function value for $\epsilon=0$, we can easily see that $T_{\epsilon=0} = z(t)$.
+Moreover, by derivating the integral, we obtain the gradient we need for the Taylor expression, which is only the function $f(z(t),t;\theta)$
