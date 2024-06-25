@@ -106,7 +106,7 @@ So, we do another approach.
 
 ### Adjoint sensitivity method
 
-At the end of our backward pass, we are interested in following gradient $\frac{dL}{d\theta}, since we want to adapt the internal parameters.
+At the end of our backward pass, we are interested in following gradient $\frac{dL}{d\theta}$, since we want to adapt the internal parameters.
 
 Using the so-called adjoint sensitivity method, we utilize a mathematical trick to first transform our initial differential equation to another differential equation.
 
@@ -114,7 +114,7 @@ The first step is to define the following adjoint state $a(t)$:
 
 $a(t) := \frac{dL}{dx(t)}$
 
-One can show, that the adjoint state folowws the following relationship:
+One can show, that the adjoint state follows the following relationship:
 
 $da(t)/dt = -a(t) \cdot \frac{df(x(t))}{dx}$
 
@@ -123,10 +123,10 @@ For now, we will focus on the backward pass itself.
 
 Moreover, one can show, that the derivative $\frac{dL}{d\theta}$ follows follwoing realtionship:
 
-$dL/dtheta = - \int(a(t) \cdot \frac{df(x(t))}{d\theta} \cdot dt )$
+$\frac{dL}{d\theta} = - \int_{T}^{t_0}(a(t) \cdot \frac{df(x(t))}{d\theta} \cdot dt )$
 
 For solving this integral, we need the trajectory of a(t) and trajectory of x(t). Since we have a formula for both of them at hand, we can
-utilize the Euler methods again, as we used at the forward pass. The difference here is that we start from our final falues x(T) := x_T and
+utilize the Euler methods again, as we used at the forward pass. The difference here is that we start from our final values x(T) := x_T and
 the corresponding a(T) = dL/x_T, which we have given after the forward-pass.
 
 So, by starting drawing our trajectory at time step T and computing the derivatives for a(t) and x(t) (since we have the diff.eq. at hand)
