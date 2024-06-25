@@ -70,6 +70,15 @@ We will end at at the last point $x(t=T)=x_T$.
 Note: Because we go in discrete steps defined by $h$ we will have a numerical error.
 I.e., for $h-->0$ the method will yield the perfect trajectory. We can define h based on our wish.
 
+## Interpretation
+
+Instead of learning the transformation of the input data from layer to layer, we try to learn the underlying dynamics of the transformation itself.
+The weights and biases of a NODE-Layer does not only contain the transformative information, which is learned to transform the data from the current to the direct next step (such as in discrete layers),
+rather it contains the information of transforming the data from every step to the next step.
+
+Instead of stacking more and more layers on top of each other to obtain a more powerful network, a NODE contains only one "Layer" (or sub-network) and computes the output "over time".
+The dynamics of the transformation, which is desired by the user, are directly learned and not approximated by a big architecture and discrete transformation steps.
+
 ## Backward-Pass
 Since, the output in our case the output of the model y_T (here T is the last time step of our trajectory)
 and the corresponding label determines the Loss of our model. For exmaple we can use MSELoss,
