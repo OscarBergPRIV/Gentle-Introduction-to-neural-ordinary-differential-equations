@@ -106,17 +106,17 @@ So, we do another approach.
 
 ### Adjoint sensitivity method
 
-At the end of our backward pass, we are interested in following gradient dL/dtheta, since we want to adapt the internal parameters.
+At the end of our backward pass, we are interested in following gradient $\frac{dL}{d\theta}, since we want to adapt the internal parameters.
 
-Using the so-called adjoint sensitivity method, we utilize a mathematical trick to first transform our initial diff.eq. to another diff.eq.
+Using the so-called adjoint sensitivity method, we utilize a mathematical trick to first transform our initial differential equation to another differential equation.
 
-The first step is to define the following adjoint state a(t):
+The first step is to define the following adjoint state $a(t)$:
 
-a(t) := dL/dx(t)
+$a(t) := \frac{dL}{dx(t)}$
 
-One can show, that the adjoint state foloows the following relationship:
+One can show, that the adjoint state folowws the following relationship:
 
-da(t)/dt = -a(t)* (df(x(t))) / (dx)
+$da(t)/dt = -a(t) cdot \frac{df(x(t))}{dx}$
 
 This relationship comes from a derivation, which is shown in appendix B.1 in the original paper. We will look at it later...
 
