@@ -1,33 +1,60 @@
 # Background
+## ResNet
+![Basic Resnet](imgs/basicresnet.JPG)
 
-Resnet:
-![Basic Resnet]()
-$x_{t+1} = x_t + f(x_t)$
+Resnet: $x_{t+1} = x_t + f(x_t)$
 
-Easier to learn only the difference of the input to the direct next output (gradient dx_t+1/dx_t = 1 + df/dx_t)
-no vanishing/exploding gradient
+When learning the transition from one input to the direct next output, it is simpler to focus on the difference between the two. This approach ensures that the gradient 
+$\frac{dx_{t+1}}{dx_t} = 1 + \frac{df}{dx_t}$ which effectively prevents issues related to vanishing or exploding gradients.
 
-What if we interpret now the layer index t as continuous time.
-For now, accept the abstract math, intuition comes later:
+## From discrete to continuous domain
+$t$ in the above equations represent the layer index. For example $x_{t+1}$ may be the first ResNet-Layer and $x_{t+2}$ may be the second ResNet-Layer within a bigger network.
 
-x_t+1 - x_t = f(x_t)
+Let's consider the layer index $t$ as continuous time.
+For now, accept the abstract mathematics. The intuition will follow later.
 
-(x_t+1 - x_t) / (t+1 - t) = f(x_t) # denominator is 1 so no changes in the formula basically
+$x_{t+1} - x_t = f(x_t)$
 
-By imagining that t are discrete time steps, rather than layer indices,
-we can decrease the "time step" between 2 time steps (t and t+1), resulting in:
+$\frac{x_{t+1} - x_t}{t+1 - t} = f(x_t)$ ***denominator is $t+1-t = 1$, thus no changes in the equation***
 
-dx(t)/t = f(x)
+By imagining that $t$ represents discrete time steps instead of layer indices,
+we can reduce the "time step" between two consecutive steps ($t$ and $t+1$) resulting in:
 
-This is a simple ordinary differential equation. 
+$\frac{dx(t)}{t} = f(x)$
+
+This is a simple ordinary differential equation. We now went from an understandable discrete hidden-layer Network to a description of a dynamic system.
+
+How can we interpret this system now? What is the input, intermediate and final output?
+
+# Neural Ordinary differential equation (NODE)
+
+The general function $f$ in the above equation can be now represented by a parameterized neural network.
+For instance, a simple fully-connected layer or a 2D convoluational layer with subsequent non-linear activation function can be used.
+
+Note: In the end, we want to train the internal weights and biases analog to a conventional neural network.
+
+The NODE can be expressed as follows:
+
+$\frac{dx(t)}{t} = f(x(t),t;\theta)$
+
+Here, $\theta$ represents the internal parameter i.e., weights and biases.
+
+## Forward-Pass
+
+In conventional artificial neural networks, the output of the current layer is the input of the next layer.
+Here, we only have one "hidden layer".
+Instead of transforming the intermediate output (input) $x_t$ through different layer, defined by the architecture,
+we transform $x$ by the same layer ***BUT*** along subsequent time-steps.
+
+To understand this even better, we will take a look at one forward pass.
+Define the input (e.g. RGB-image) as $x(t=0) := x_0$
+
+
 
 Differences, now the function f can be a learnable paramterized neural layer or a combination of layers, as long as 
 the input shape matches the output shape, since the output of one time step will be the input of the next time step.
 See this later.
 
-What is now one forward pass of this function?
-
-The input is defined at the initial time step t_0 i.e., input = x(t_0) := x_0
 
 This reduces the problem to a intial value problem.
 
