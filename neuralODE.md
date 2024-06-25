@@ -57,10 +57,11 @@ the input shape matches the output shape, since the output of one time step will
 One Forward-Pass computes the output (and the trajectory) by the well-known [Euler method](https://en.wikipedia.org/wiki/Euler_method).
 The gradients (green arrows) can be computed, since we have the formula of $\frac{dx(t)}{t}$ at hand. 
 
-We first compute the gradient of the initial starting point x_0.
+We first compute the gradient of the initial starting point $x_0$.
 
-The result of f(x_0) guids the initial point $x_0$ to the next point of the trajectory.
-By doing this for mutiple time steps, where we go along the gradient in a pre-defined stepsize $h$.
+The result of $f(x_0)$ guides the initial point $x_0$ to the next point of the trajectory.
+By doing this for multiple time steps, where we go along the gradient in a pre-defined stepsize $h$,
+we are able to obtain the whole dynamic-trajectory of the system.
 
 $x_1 = f(x_0)*h + x_0$ Computing the second point of the trajectory
 
