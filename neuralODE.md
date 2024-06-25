@@ -24,6 +24,20 @@ $\frac{dx(t)}{t} = f(x)$
 
 This is a simple ordinary differential equation. We now went from an understandable discrete hidden-layer Network to a description of a dynamic system.
 
+How can we interpret this system now? What is the input, intermediate and final output?
+
+# Neural Ordinary differential equation (NODE)
+
+The general function $f$ in the above equation can be now represented by a parameterized neural network.
+For instance, a simple fully-connected layer or a 2D conoluational layer with subsequent non-linear activation function can be used.
+
+Note: In the end, we want to train the internal weights and biases analog to a conventional neural network.
+
+The NODE can be expressed as follows:
+
+$\frac{dx(t)}{t} = f(x(t),t;\theta)$
+
+
 Differences, now the function f can be a learnable paramterized neural layer or a combination of layers, as long as 
 the input shape matches the output shape, since the output of one time step will be the input of the next time step.
 See this later.
