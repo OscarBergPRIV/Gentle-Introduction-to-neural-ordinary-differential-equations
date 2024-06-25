@@ -4,9 +4,8 @@ Resnet:
 ![Basic Resnet](imgs/basicresnet.JPG)
 $x_{t+1} = x_t + f(x_t)$
 
-Easier to learn only the difference of the input to the direct next output (gradient dx_t+1/dx_t = 1 + df/dx_t)
-no vanishing/exploding gradient
-
+When learning the transition from one input to the direct next output, it is simpler to focus on the difference between the two. This approach ensures that the gradient 
+$dx_{t+1}/dx_t = 1 + df/dx_t$ which effectively prevents issues related to vanishing or exploding gradients.
 What if we interpret now the layer index t as continuous time.
 For now, accept the abstract math, intuition comes later:
 
