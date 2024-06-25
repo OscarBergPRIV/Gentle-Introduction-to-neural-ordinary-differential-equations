@@ -49,7 +49,7 @@ we transform $x$ by the same layer ***BUT*** along subsequent time-steps.
 To understand this even better, we will take a look at one forward pass.
 Define the input (e.g. RGB-image) as $x(t=0) := x_0$
 
-
+![Forward pass NODE](imgs/forward.png)
 
 Differences, now the function f can be a learnable paramterized neural layer or a combination of layers, as long as 
 the input shape matches the output shape, since the output of one time step will be the input of the next time step.
