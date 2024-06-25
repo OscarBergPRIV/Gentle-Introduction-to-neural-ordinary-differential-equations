@@ -39,13 +39,22 @@ $\frac{dx(t)}{t} = f(x(t),t;\theta)$
 
 Here, $\theta$ represents the internal parameter i.e., weights and biases.
 
+## Forward-Pass
+
+In conventional artificial neural networks, the output of the current layer is the input of the next layer.
+Here, we only have one "hidden layer".
+Instead of transforming the intermediate output (input) $x_t$ through different layer, defined by the architecture,
+we transform $x$ by the same layer ***BUT*** along subsequent time-steps.
+
+To understand this even better, we will take a look at one forward pass.
+Define the input (e.g. RGB-image) as $x(t=0) := x_0$
+
+
+
 Differences, now the function f can be a learnable paramterized neural layer or a combination of layers, as long as 
 the input shape matches the output shape, since the output of one time step will be the input of the next time step.
 See this later.
 
-What is now one forward pass of this function?
-
-The input is defined at the initial time step t_0 i.e., input = x(t_0) := x_0
 
 This reduces the problem to a intial value problem.
 
