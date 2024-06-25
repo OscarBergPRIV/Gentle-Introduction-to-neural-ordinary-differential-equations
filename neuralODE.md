@@ -177,7 +177,7 @@ The solution of these problems is to insert a third dimension at the input of th
 
 Take a look at the 3D vector space for the latter problem to achieve the desired binary mapping:
 
-![]()
+![3D Augmented NODE](imgs/3DMappingSolution.JPG)
 
 ### Why is a simple ResNet able to compute this mapping?
 
