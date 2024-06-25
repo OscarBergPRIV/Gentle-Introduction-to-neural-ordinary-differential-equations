@@ -153,18 +153,20 @@ This input value should now be mapped to the corresponding labels (1 (for input=
 
 We can visualize this problem with the following figure from [this paper](https://arxiv.org/abs/1904.01681):
 
-![NODE mapping problem]()
+![NODE mapping problem](imgs/NODEMappingProblem.JPG)
 
-Imagine the input points (two points at the left-hand side) should be transformed along a defines vector space in time to the output points
-(right-hand side)
+Imagine the input points (red and blue point at the left-hand side) should be transformed along a defined vector space in time to the output points
+(right-hand side).
 
-Intuitively, we can understand, that this is not possible with a standard neuralODE, since there is no possibility to define a 2D-vector space
-in which the two derired trajectories can cross.
+Intuitively, we can understand, that this is not possible with a standard NODE, since there is no possibility to define a 2D-vector space
+in which the two desired trajectories can cross. Note: The mathematical proof of this is in the paper, but let's not bother with this.
 
-One approach, Dupont et al., introduced augmented neural ODE. The main idea here is to insert additional dimesions to the input, such that
-the network is able to find a vector space, in which the desried trajectories are not forced to merge.
+To tackle this issue, Dupont et al. introduced augmented neural ODE. The main idea here is to insert additional dimensions to the input, such that
+the network can find a vector space, in which the desired trajectories are not forced to merge.
 
-Why is a simple ResNet able to compute this mapping?
+For exmaple, a 3D-vector space can be learned such that the mapping is achieved without the two trajectories crossing.
+
+### Why is a simple ResNet able to compute this mapping?
 
 A ResNet does not learn the underlying dynamis of the transfomration system, it learns every discrete step one by one.
 Hence, the ResNet is able to insert some form of dersired error in the right step of the trajectories, such that the two trajectories are able
