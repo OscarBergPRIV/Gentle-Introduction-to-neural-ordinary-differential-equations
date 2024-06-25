@@ -166,7 +166,16 @@ the network can find a vector space, in which the desired trajectories are not f
 
 For example, a 2D-vector space can be learned such that the mapping is achieved without the two trajectories crossing.
 
-Another example if the following problem:
+Another example:
+
+![2D NODE mapping problem](imgs/NODEMappingProblem2D.JPG)
+
+It is impossible to train a NODE to map the points inside the blue circle to -1 and the red points to 1.
+We understand this intuitively, since the blue points cannot cross the red circle with a 2D vector field.
+
+The solution of these problems is to insert a third dimension at the input of the NODE to "give the NODE more space" to form a vector space in order to achieve the desired mapping.
+
+Take a look at the 3D vector space for the latter problem to achieve the desired binary mapping:
 
 ![]()
 
