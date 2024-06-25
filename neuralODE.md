@@ -1,7 +1,8 @@
 # Background
 
 Resnet:
-$x_t+1 = x_t + f(x_t)$
+![Basic Resnet]()
+$x_{t+1} = x_t + f(x_t)$
 
 Easier to learn only the difference of the input to the direct next output (gradient dx_t+1/dx_t = 1 + df/dx_t)
 no vanishing/exploding gradient
