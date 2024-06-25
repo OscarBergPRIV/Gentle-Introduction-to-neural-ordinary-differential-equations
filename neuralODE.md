@@ -125,12 +125,12 @@ Moreover, one can show, that the derivative $\frac{dL}{d\theta}$ follows followi
 
 $\frac{dL}{d\theta} = - \int_{T}^{t_0}(a(t) \cdot \frac{df(x(t))}{d\theta} \cdot dt )$
 
-For solving this integral, we need the trajectory of a(t) and trajectory of x(t). Since we have a formula for both of them at hand, we can
+For solving this integral, we need the trajectory of $a(t)$ and trajectory of $x(t)$. Since we have a formula for both of them at hand, we can
 utilize the Euler methods again, as we used at the forward pass. The difference here is that we start from our final values $x(T) := x_T$ (Note the boundaries of the integral) and
 the corresponding $a(T) = \frac{dL}{x_T}$, which we have given after the forward-pass as the end of the predicted trajectory.
 
 So, by starting drawing our trajectory at time step T and computing the derivatives for a(t) and x(t) (since we have the diff.eq. at hand)
-we can compute our final derivative dL/dtheta and utilize the latter to update the internal parameters theta.
+we can compute our final derivative $\frac{dL}{d\theta}$ and utilize the latter to update the internal parameters $\theta$.
 
 Advantages:
 
