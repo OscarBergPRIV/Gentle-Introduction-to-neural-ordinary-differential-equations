@@ -68,7 +68,7 @@ $x_1 = f(x_0)*h + x_0$ Computing the second point of the trajectory
 We will end at at the last point $x(t=T)=x_T$.
 
 Note: Because we go in discrete steps defined by $h$ we will have a numerical error.
-I.e., for $h-->0$ the method will yield the perfect trajectory. We can define h based on our wish.
+I.e., for $h\rightarrow0$ the method will yield the perfect trajectory. We can define h based on our wish.
 
 ## Interpretation
 
@@ -91,7 +91,7 @@ For example, we can use a standard mean-squared error:
 
 $loss = MSELoss(x_T, y)$
 
-$x_T$ is defined by going along the trajectory. By $h-->0$, we obtain the integral of $f(x(t),t,\theta)$, since integrating the derivative $\frac{dx(t)}{dt}$ over time bounded by $t=0$ and $t=T$
+$x_T$ is defined by going along the trajectory. By $h\rightarrow0$, we obtain the integral of $f(x(t),t,\theta)$, since integrating the derivative $\frac{dx(t)}{dt}$ over time bounded by $t=0$ and $t=T$
 yields $x_T - x_0$.
 
 Hence,
