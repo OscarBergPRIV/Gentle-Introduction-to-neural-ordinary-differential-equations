@@ -15,12 +15,12 @@ For now, accept the abstract mathematics. The intuition will follow later.
 
 $x_{t+1} - x_t = f(x_t)$
 
-$\frac{x_{t+1} - x_t}{t+1 - t} = f(x_t)$ ***denominator is $t+1-t = 1$, thus no changes in the equation***
+$\frac{x_{t+1} - x_t}{t+1 - t} = f(x_t)$ ***denominator is t+1-t = 1, thus no changes in the equation***
 
 By imagining that $t$ represents discrete time steps instead of layer indices,
 we can reduce the "time step" between two consecutive steps ($t$ and $t+1$) resulting in:
 
-$\frac{dx(t)}{t} = f(x)$
+$\frac{dx(t)}{dt} = f(x)$
 
 This is a simple ordinary differential equation. We now went from an understandable discrete hidden-layer Network to a description of a dynamic system.
 
@@ -35,7 +35,7 @@ Note: In the end, we want to train the internal weights and biases analog to a c
 
 The NODE can be expressed as follows:
 
-$\frac{dx(t)}{t} = f(x(t),t;\theta)$
+$\frac{dx(t)}{dt} = f(x(t),t;\theta)$
 
 Here, $\theta$ represents the internal parameter i.e., weights and biases.
 
@@ -87,15 +87,16 @@ NODE (right) try to learn the underlying vector field itself. Hence, intermediat
 ## Backward-Pass
 Since, the mismatch of the output, in our case the output of the model $x_T$, and the corresponding label $y$ determines the Error of our model, we can compute the total Loss.
 
-For exmaple, we can use a standard mean-squared error:
+For example, we can use a standard mean-squared error:
 
 $loss = MSELoss(x_T, y)$
 
-y_T is defined by going along the trajoctroy or in our case integrating the derivaive dx(t)/t along the time steps, i.e.,
+$x_T$ is defined by going along the trajectory. By $h-->0$, we obtain the integral of $f(x(t),t,\theta)$, since integrating the derivative $\frac{dx(t)}{dt}$ over time bounded by $t=0$ and $t=T$
+
+in our case integrating the derivaive dx(t)/t along the time steps.
 
 loss = L(z_0 + integrate_t0_T_(f(x(t)dt)) ) = L(ODESolve(x_0,f,t0,t1,theta)) # more general form
 
-# Backward
 
 It would be possible to store all the activations in each timestep and perfrom backward differentiating reverse the operations of the forward pass.
 But this would lead in high memory cost and in additional numerical errors.
