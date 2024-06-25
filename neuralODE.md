@@ -210,4 +210,4 @@ Take a look here:
 
 ![Proof ASM2](imgs/proof_ASM2.JPG)
 
-By generalizing this derivation to a 3-dimensional variable problem, we can obtain our dersired gradients, we need for the []()
+By generalizing this derivation to a 3-dimensional variable problem, we can obtain our dersired gradients, we need for the [Backward-Pass](https://github.com/OscarBergPRIV/Gentle-Introduction-to-neural-ordinary-differential-equations/blob/main/neuralODE.md#adjoint-sensitivity-method)
