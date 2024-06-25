@@ -53,25 +53,23 @@ Define the input (e.g. RGB-image) as $x(t=0) := x_0$
 
 Differences, now the function f can be a learnable paramterized neural layer or a combination of layers, as long as 
 the input shape matches the output shape, since the output of one time step will be the input of the next time step.
-See this later.
 
+One Forward-Pass computes the output (and the trajectory) by the well-known [Euler method](https://en.wikipedia.org/wiki/Euler_method).
+The gradients (green arrows) can be computed, since we have the formula of $\frac{dx(t)}{t}$ at hand. 
 
-This reduces the problem to a intial value problem.
+We first compute the gradient of the initial starting point x_0.
 
-At first we are interested in the output of the network, ie.e the trajectory of the x(t).
+The result of f(x_0) guids the initial point $x_0$ to the next point of the trajectory.
+By doing this for mutiple time steps, where we go along the gradient in a pre-defined stepsize $h$.
 
-We can do this with the well-known Euler method:
+$x_1 = f(x_0)*h + x_0$ Computing the second point of the trajectory
 
-We first compute the gradient of the initial starting piuint x_0.
-this is easy, since we have the formula of the gradient dx(t)/t already at hand:
+We will end at at the last point $x(t=T)=x_T$.
 
-The result of f(x_0) guids the initial ppoint to the next point of the trajectroty.
+Note: Because we go in discrete steps defined by $h$ we will have a numerical error.
+I.e., for $h-->0$ the method will yield the perfect trajectory. We can define h based on our wish.
 
-x_1 = f(x_0)*h + x_0
-
-Here h is the step size in time. Note: because we go in discrete steps defined by h we will have a numerical error
-. I.e., for h-->0 the method will yield the perfect trajectory. We can define h based on our wish.
-
+## Backward-Pass
 Since, the output in our case the output of the model y_T (here T is the last time step of our trajectory)
 and the corresponding label determines the Loss of our model. For exmaple we can use MSELoss,
 loss = MSELoss(y_T)
