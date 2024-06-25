@@ -81,6 +81,9 @@ rather it contains the information of transforming the data from every step to t
 Instead of stacking more and more layers on top of each other to obtain a more powerful network, a NODE contains only one "Layer" (or sub-network) and computes the output "over time".
 The dynamics of the transformation, which is desired by the user, are directly learned and not approximated by a big architecture and discrete transformation steps.
 
+The above figure from the original paper highlights the difference in data transformation. ResNets (left) try to learn the transformation (colorful vectors at each depth (y-axis)).
+NODE (right) try to learn the underlying vector field itself. Hence, intermediate data can be spread in a non-uniform manner along the depth-axis, which represents the continuous time. 
+
 ## Backward-Pass
 Since, the output in our case the output of the model y_T (here T is the last time step of our trajectory)
 and the corresponding label determines the Loss of our model. For exmaple we can use MSELoss,
