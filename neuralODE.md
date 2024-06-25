@@ -116,14 +116,14 @@ $a(t) := \frac{dL}{dx(t)}$
 
 One can show, that the adjoint state folowws the following relationship:
 
-$da(t)/dt = -a(t) cdot \frac{df(x(t))}{dx}$
+$da(t)/dt = -a(t) \cdot \frac{df(x(t))}{dx}$
 
-This relationship comes from a derivation, which is shown in appendix B.1 in the original paper. We will look at it later...
+This relationship comes from a derivation, which is shown in appendix B.1 in the original paper.
+For now, we will focus on the backward pass itself.
 
+Moreover, one can show, that the derivative $\frac{dL}{d\theta}$ follows follwoing realtionship:
 
-Moreover, one can show, that the derivative dL/dtheta follows follwoing realtionship:
-
-dL/dtheta = - integrate(a(t)* (df(x(t))) / (dtheta) * dt )
+$dL/dtheta = - \int(a(t) \cdot \frac{df(x(t))}{d\theta} \cdot dt )$
 
 For solving this integral, we need the trajectory of a(t) and trajectory of x(t). Since we have a formula for both of them at hand, we can
 utilize the Euler methods again, as we used at the forward pass. The difference here is that we start from our final falues x(T) := x_T and
@@ -131,17 +131,6 @@ the corresponding a(T) = dL/x_T, which we have given after the forward-pass.
 
 So, by starting drawing our trajectory at time step T and computing the derivatives for a(t) and x(t) (since we have the diff.eq. at hand)
 we can compute our final derivative dL/dtheta and utilize the latter to update the internal parameters theta.
-
-Intuition:
-
-An ode-network, does not learn the transformation of each layer index to its next per se, rather it learns the underlying dynamics of the system.
-If we take a look at the following images, which was given in the original paper:
-
-
-Here the input is shown at the x-axis for y=0. The transformed input of each layer (black points) for each layer (y axis "depth of network")
-is transformed by the layer at index denoted at the y-axis. By defining an ode network, which can be regarded as a continuous layer Resnet,
-the set of parameters in an ODENet is able to learn the underlying gradient field, which drives the input (in case of a learn network) to its
-desired output. Since, we define our step size, we can take arbitrliy step along the trajectory.
 
 Advantages:
 
