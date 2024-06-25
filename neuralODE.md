@@ -191,3 +191,6 @@ Take a look at the first two images inside the first figure of [# Augmented neur
 
 # Derivation of the Adjoint Sensitivity method
 
+The following images contain the proof of the Adjoint Sensitivity Formulas:
+
+![]()
