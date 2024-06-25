@@ -195,3 +195,5 @@ The following images contain the proof of the Adjoint Sensitivity Formulas:
 Note: The images are directly copied from [Chen et al.](https://arxiv.org/pdf/1806.07366)
 ![proof ASm1](imgs/proof_ASM1.JPG)
 
+In my opinion, the most difficult step to understand is step from (40) to (41).
+Here, a Taylor series of first order is constructed around $z(t)$. Imagine $z(t)$ is a constant, since we want to develop our series with the variable $\epsilon$
