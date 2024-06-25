@@ -208,4 +208,6 @@ Now, how can we obtain the desired gradients $\frac{dL}{d\theta}$?
 
 Take a look here:
 
-![Proof ASM2]()
+![Proof ASM2](imgs/proof_ASM2.JPG)
+
+By generalizing this derivation to a 3-dimensional variable problem, we can obtain our dersired gradients, we need for the []()
