@@ -193,4 +193,5 @@ Take a look at the first two images inside the first figure of [# Augmented neur
 
 The following images contain the proof of the Adjoint Sensitivity Formulas:
 
-![]()
+![proof ASm1](imgs/proof_ASM1.JPG)
+
