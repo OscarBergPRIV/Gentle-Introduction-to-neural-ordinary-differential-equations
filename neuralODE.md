@@ -98,7 +98,8 @@ Hence,
 
 $loss = L(x_0 +\int_{t_0}^{T}f(x(t)dt) ) = L(ODESolve(x_0,f,t_0,T,theta))$
 
-It would be possible to store all the activations in each timestep and perform backward differentiating reverse the operations of the forward pass.
+Since we already have the trajectory of $x(t)$ by computing the forward pass,
+it would be possible to store all the activations in each timestep and perform backward differentiating reverse the operations of the forward pass.
 But this would lead in high memory cost and in additional numerical errors.
 
 So, we do another approach.
