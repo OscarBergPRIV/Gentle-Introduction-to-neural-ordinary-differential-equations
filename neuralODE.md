@@ -12,7 +12,7 @@ For now, let's focus on the abstract mathematics. The intuition will follow late
 
 $x_{t+1} - x_t = f(x_t)$
 
-$(x_{t+1} - x_t) / (t+1 - t) = f(x_t)$ # denominator is $t+1-t = 1$, thus no changes in the equation
+$\frac{x_{t+1} - x_t}{t+1 - t} = f(x_t)$ # denominator is $t+1-t = 1$, thus no changes in the equation
 
 By imagining that $t$ represents discrete time steps instead of layer indices,
 we can reduce the "time step" between two consecutive steps ($t$ and $t+1$) resulting in:
