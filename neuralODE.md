@@ -63,7 +63,7 @@ The result of $f(x_0)$ guides the initial point $x_0$ to the next point of the t
 By doing this for multiple time steps, where we go along the gradient in a pre-defined stepsize $h$,
 we are able to obtain the whole dynamic-trajectory of the system.
 
-$x_1 = f(x_0)*h + x_0$ Computing the second point of the trajectory
+$x_1 = f(x_0) \cdot h + x_0$ Computing the second point of the trajectory
 
 We will end at at the last point $x(t=T)=x_T$.
 
