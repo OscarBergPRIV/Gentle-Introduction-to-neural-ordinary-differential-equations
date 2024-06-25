@@ -121,13 +121,13 @@ $da(t)/dt = -a(t) \cdot \frac{df(x(t))}{dx}$
 This relationship comes from a derivation, which is shown in appendix B.1 in the original paper.
 For now, we will focus on the backward pass itself.
 
-Moreover, one can show, that the derivative $\frac{dL}{d\theta}$ follows follwoing realtionship:
+Moreover, one can show, that the derivative $\frac{dL}{d\theta}$ follows following realtionship:
 
 $\frac{dL}{d\theta} = - \int_{T}^{t_0}(a(t) \cdot \frac{df(x(t))}{d\theta} \cdot dt )$
 
 For solving this integral, we need the trajectory of a(t) and trajectory of x(t). Since we have a formula for both of them at hand, we can
-utilize the Euler methods again, as we used at the forward pass. The difference here is that we start from our final values x(T) := x_T and
-the corresponding a(T) = dL/x_T, which we have given after the forward-pass.
+utilize the Euler methods again, as we used at the forward pass. The difference here is that we start from our final values $x(T) := x_T$ (Note the boundaries of the integral) and
+the corresponding $a(T) = \frac{dL}{x_T}$, which we have given after the forward-pass as the end of the predicted trajectory.
 
 So, by starting drawing our trajectory at time step T and computing the derivatives for a(t) and x(t) (since we have the diff.eq. at hand)
 we can compute our final derivative dL/dtheta and utilize the latter to update the internal parameters theta.
