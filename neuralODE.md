@@ -188,3 +188,6 @@ Hence, the ResNet is able to insert some form of desried error in the right step
 to cross in the transformation space. The "vector field" of a simple ResNet can be "distorted" such that the vectors can cross at the right depth of the network.
 
 Take a look at the first two images inside the first figure of [# Augmented neural ODE](https://github.com/OscarBergPRIV/Gentle-Introduction-to-neural-ordinary-differential-equations/blob/main/neuralODE.md#augmented-neural-ode)
+
+# Derivation of the Adjoint Sensitivity method
+
