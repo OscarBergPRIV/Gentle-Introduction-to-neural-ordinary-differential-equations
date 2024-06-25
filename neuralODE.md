@@ -203,3 +203,9 @@ $f_{Taylor} = f(a) + (t-a) \cdot \frac{df}{dt}(a)$
 Imagine $z(t)$ is a constant since we want to develop our series with the independent variable $\epsilon$.
 Since we need the function value for $\epsilon=0$, we can easily see that $T_{\epsilon=0} = z(t)$.
 Moreover, by derivating the integral, we obtain the gradient we need for the Taylor expression, which is only the function $f(z(t),t;\theta)$
+
+Now, how can we obtain the desired gradients $\frac{dL}{d\theta}$?
+
+Take a look here:
+
+![Proof ASM2]()
