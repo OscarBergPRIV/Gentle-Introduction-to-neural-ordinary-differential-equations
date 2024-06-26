@@ -6,4 +6,4 @@ It explains the basic insights from [Chen et al.](https://arxiv.org/abs/1806.073
 The structure of the implementation in pyTorch is described, too.
 
 Example:
-![](assets/ode_demo.gif)
+![]([assets/ode_demo.gif](https://github.com/rtqichen/torchdiffeq/blob/master/assets/ode_demo.gif))
