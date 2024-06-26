@@ -5,5 +5,12 @@ It explains the basic insights from [Chen et al.](https://arxiv.org/abs/1806.073
 
 The structure of the implementation in pyTorch is described, too.
 
-Example:
 ![](https://github.com/rtqichen/torchdiffeq/blob/master/assets/ode_demo.gif)
+
+Linked from:
+@misc{torchdiffeq,
+	author={Chen, Ricky T. Q.},
+	title={torchdiffeq},
+	year={2018},
+	url={https://github.com/rtqichen/torchdiffeq},
+}
