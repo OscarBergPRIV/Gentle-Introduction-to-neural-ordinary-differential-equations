@@ -5,4 +5,5 @@ It explains the basic insights from [Chen et al.](https://arxiv.org/abs/1806.073
 
 The structure of the implementation in pyTorch is described, too.
 
+Example:
 ![](assets/ode_demo.gif)
