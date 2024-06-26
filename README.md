@@ -7,10 +7,5 @@ The structure of the implementation in pyTorch is described, too.
 
 ![](https://github.com/rtqichen/torchdiffeq/blob/master/assets/ode_demo.gif)
 
-Linked from:
-@misc{torchdiffeq,
-	author={Chen, Ricky T. Q.},
-	title={torchdiffeq},
-	year={2018},
-	url={https://github.com/rtqichen/torchdiffeq},
-}
+Gif copied from:
+[torchdiffeq library](https://github.com/rtqichen/torchdiffeq) by Chen, Ricky T. Q. (2018)
